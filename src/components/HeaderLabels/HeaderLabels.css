@@ -1,0 +1,28 @@
+.HeaderLabels {
+  height: 10px;
+  display: flex;
+  padding: 20px;
+  margin-top: 1px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(159,184,206); 
+  background: -moz-linear-gradient(top, rgba(159,184,206,1) 0%, rgba(222,231,238,1) 36%, rgba(255,255,255,1) 68%, rgba(255,255,255,1) 100%); 
+  background: -webkit-linear-gradient(top, rgba(159,184,206,1) 0%,rgba(222,231,238,1) 36%,rgba(255,255,255,1) 68%,rgba(255,255,255,1) 100%); 
+  background: linear-gradient(to bottom, rgba(159,184,206,1) 0%,rgba(222,231,238,1) 36%,rgba(255,255,255,1) 68%,rgba(255,255,255,1) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9fb8ce', endColorstr='#ffffff',GradientType=0 );
+}
+
+h2 {
+  font-size: 16px;
+  color: #043d67;
+  margin-right: 30px;
+}
+
+.labelsLeft, .labelsRight {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article {
+  margin-right: 0;
+}
