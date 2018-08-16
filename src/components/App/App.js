@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import LaunchCards from '../LaunchCards/LaunchCards';
 import spaceBgImg from './images/background.jpg';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <section className="App" style={bgImg}>
         <main>
           <Header />
+          <LaunchCards />
         </main>
       </section>
     );
