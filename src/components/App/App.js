@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from '../Header/Header';
 import spaceBgImg from './images/background.jpg';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <section className="App" style={bgImg}>
         <main>
-          <h1>SpaceX Launches</h1>
+          <Header />
         </main>
       </section>
     );
