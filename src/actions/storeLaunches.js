@@ -1,9 +1,10 @@
-export const storeLaunches = (badge, name, type, date, details, article) => ({
+export const storeLaunches = (badge, name, launchType, date, details, id, article) => ({
   type: 'STORE_LAUNCHES', 
   badge,
   name,
-  type,
+  launchType,
   date,
   details,
+  id,
   article
 })

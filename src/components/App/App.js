@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Header from '../Header/Header';
 import LaunchCards from '../LaunchCards/LaunchCards';
 import spaceBgImg from './images/background.jpg';
+import { storeLaunches } from '../../actions/storeLaunches';
+const moment = require('moment');
+moment().format();
 
 class App extends Component {
   componentDidMount() {
@@ -12,6 +16,26 @@ class App extends Component {
   fetchLaunches = async () => {
     const results = await fetch('https://api.spacexdata.com/v2/launches');
     const launches = await results.json();
+
+    const launchData = this.cleanLaunchData(launches);
+    console.log(launchData)
+  }
+
+  cleanLaunchData = (data) => {
+    const cleanLaunches = data.map(launch => {
+  
+      return ({
+        badge: launch.links.mission_patch_small,
+        name: launch.rocket.rocket_name,
+        type: launch.rocket.rocket_type,
+        date: moment.utc(launch.launch_date_utc).format('MM/DD/YYYY'),
+        details: launch.details,
+        id: launch.flight_number,
+        article: launch.links.article_link
+      })
+    })
+  
+    return cleanLaunches
   }
 
   render() {
@@ -28,4 +52,24 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  storeLaunches: (
+    badge, 
+    name, 
+    type, 
+    date, 
+    details,
+    id, 
+    article) => 
+    dispatch(storeLaunches(
+      badge, 
+      name, 
+      type, 
+      date, 
+      details,
+      id, 
+      article)
+    ),
+});
+
+export default connect(null, mapDispatchToProps)(App);
