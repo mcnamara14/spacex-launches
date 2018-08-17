@@ -6,6 +6,7 @@
   width: 100vw;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 30px;
 }
 
 main {
