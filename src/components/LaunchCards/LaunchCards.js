@@ -9,9 +9,8 @@ class LaunchCards extends Component {
 
     if (this.props.launches.length) {
         launchCards = this.props.launches.map(launch => {
-        const { badge, name, type, date, details, id, article} = launch;
 
-        return <LaunchCard badge={badge} />
+        return <LaunchCard {...launch} />
       })
     }
 
