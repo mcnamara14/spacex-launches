@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './LaunchCard.css';
 import placeholderImg from './images/placeholder.png';
+import articleLinkImg from './images/link.svg';
 
 class LaunchCard extends Component {
   render() {
@@ -12,7 +13,7 @@ class LaunchCard extends Component {
           <div className="date">Date</div>
           <div className="details">Details</div>
           <div className="id">ID</div>
-          <div className="article">Article</div>
+          <div className="article"><img src={articleLinkImg} /></div>
       </section>
     );
   }

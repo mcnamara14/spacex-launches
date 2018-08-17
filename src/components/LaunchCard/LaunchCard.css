@@ -22,3 +22,7 @@
 .LaunchCard .badge, .LaunchCard .id, .LaunchCard .article {  
   justify-content: center;
 }
+
+.article img {
+  width: 20px;
+}
