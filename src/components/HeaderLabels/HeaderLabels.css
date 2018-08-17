@@ -16,13 +16,40 @@ h2 {
   font-size: 16px;
   color: #043d67;
   margin-right: 30px;
+  margin-top: 31px;
+  width: auto;
+  padding-left: 5px;
+  height: 28px;
+  padding-right: 5px;
+  border-bottom: 4px solid #27d9cf;
 }
 
-.labelsLeft, .labelsRight {
-  display: flex;
-  justify-content: space-between;
+.badge {
+  width: 50px;
+}
+
+.name {
+  width: 94px;
+}
+
+.type {
+  width: 87px;
+}
+
+.date {
+  width: 86px;
+}
+
+.details {
+  width: 46px;
+  margin-right: 218px !important;
+}
+
+.id {
+  width: 15px;
 }
 
 .article {
-  margin-right: 0;
+  width: 44px;
+  margin-right: 0 !important;
 }
