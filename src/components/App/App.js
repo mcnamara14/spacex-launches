@@ -17,8 +17,8 @@ class App extends Component {
     const results = await fetch('https://api.spacexdata.com/v2/launches');
     const launches = await results.json();
 
-    const launchData = this.cleanLaunchData(launches);
-    console.log(launchData)
+    const cleanLaunchData = this.cleanLaunchData(launches);
+    this.storeLaunches(cleanLaunchData);
   }
 
   cleanLaunchData = (data) => {
@@ -36,6 +36,14 @@ class App extends Component {
     })
   
     return cleanLaunches
+  }
+
+  storeLaunches = (launchData) => {
+    launchData.forEach(launch => {
+      const { badge, name, type, date, details, id, article } = launch;
+
+      this.props.storeLaunches(badge, name, type, date, details, id, article)
+    });
   }
 
   render() {
