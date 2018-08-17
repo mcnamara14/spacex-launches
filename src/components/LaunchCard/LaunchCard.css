@@ -7,6 +7,8 @@
   background:rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   border: 1px solid #fff;
+  transition: all ease-in-out 0.5s;
+  margin-bottom: 10px;
 }
 
 .LaunchCard div {
@@ -25,4 +27,17 @@
 
 .article img {
   width: 20px;
+}
+
+.badge img {
+  width: 40px;
+}
+
+.LaunchCard .details {
+  width: 240px;
+  margin-right: 30px !important;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

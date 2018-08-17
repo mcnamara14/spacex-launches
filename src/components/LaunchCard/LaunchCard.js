@@ -5,15 +5,17 @@ import articleLinkImg from './images/link.svg';
 
 class LaunchCard extends Component {
   render() {
+    const { badge, name, type, date, details, id, article } = this.props;
+ 
     return (
       <section className="LaunchCard" >
-          <div className="badge"><img src={placeholderImg} /></div>
-          <div className="name">Name</div>
-          <div className="type">Type</div>
-          <div className="date">Date</div>
-          <div className="details">Details</div>
-          <div className="id">ID</div>
-          <div className="article"><img src={articleLinkImg} /></div>
+          <div className="badge"><img src={badge} /></div>
+          <div className="name">{name}</div>
+          <div className="type">{type}</div>
+          <div className="date">{date}</div>
+          <div className="details">{details}</div>
+          <div className="id">{id}</div>
+          <div className="article"><a href={article} target="_blank"><img src={articleLinkImg} /></a></div>
       </section>
     );
   }
