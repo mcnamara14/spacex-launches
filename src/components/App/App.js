@@ -22,8 +22,11 @@ class App extends Component {
   }
 
   cleanLaunchData = (data) => {
+    let reddit;
+
     const cleanLaunches = data.map(launch => {
-  
+      const reused = Object.keys(launch.reuse).some(key => launch.reuse[key]);
+      'reddit_campaign' in launch.links ? reddit = true : reddit = false;
       return ({
         badge: launch.links.mission_patch_small,
         name: launch.rocket.rocket_name,
@@ -31,7 +34,10 @@ class App extends Component {
         date: moment.utc(launch.launch_date_utc).format('MM/DD/YYYY'),
         details: launch.details,
         id: launch.flight_number,
-        article: launch.links.article_link
+        article: launch.links.article_link,
+        landSuccess: launch.rocket.first_stage.cores[0].land_success || false,
+        reused,
+        reddit
       })
     })
   
@@ -40,9 +46,9 @@ class App extends Component {
 
   storeLaunches = (launchData) => {
     launchData.forEach(launch => {
-      const { badge, name, type, date, details, id, article } = launch;
+      const { badge, name, type, date, details, id, article, landSuccess, reused, reddit } = launch;
 
-      this.props.storeLaunches(badge, name, type, date, details, id, article)
+      this.props.storeLaunches(badge, name, type, date, details, id, article, landSuccess, reused, reddit)
     });
   }
 
@@ -68,7 +74,11 @@ export const mapDispatchToProps = (dispatch) => ({
     date, 
     details,
     id, 
-    article) => 
+    article,
+    landSuccess,
+    reused,
+    reddit
+  ) => 
     dispatch(storeLaunches(
       badge, 
       name, 
@@ -76,7 +86,11 @@ export const mapDispatchToProps = (dispatch) => ({
       date, 
       details,
       id, 
-      article)
+      article,
+      landSuccess,
+      reused,
+      reddit
+    )
     ),
 });
 

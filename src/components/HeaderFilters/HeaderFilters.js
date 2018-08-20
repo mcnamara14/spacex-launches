@@ -8,15 +8,15 @@ import { storeReddit } from '../../actions/storeReddit';
 
 class HeaderFilters extends Component {
   toggleLandSuccessFilter = (event) => {
-    !this.props.filters.landSuccess ? this.props.storeLandSuccess(true) : this.props.storeLandSuccess(false);
+    this.props.landSuccess ? this.props.storeLandSuccess(false) : this.props.storeLandSuccess(true);
   }
 
   toggleReusedFilter = (event) => {
-    !this.props.filters.reused ? this.props.storeReused(true) : this.props.storeReused(false);
+    this.props.reused ? this.props.storeReused(false) : this.props.storeReused(true);
   }
 
   toggleRedditFilter = (event) => {
-    !this.props.filters.reddit ? this.props.storeReddit(true) : this.props.storeReddit(false);
+    this.props.reddit ? this.props.storeReddit(false) : this.props.storeReddit(true);
   }
 
   render() {
@@ -49,7 +49,10 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export const mapStateToProps = (state) => ({
-  filters: state.filters
+  filters: state.filters,
+  landSuccess: state.landSuccess,
+  reused: state.reused,
+  reddit: state.reddit
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderFilters);

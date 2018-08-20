@@ -1,4 +1,4 @@
-export const storeLaunches = (badge, name, launchType, date, details, id, article) => ({
+export const storeLaunches = (badge, name, launchType, date, details, id, article, landSuccess, reused, reddit) => ({
   type: 'STORE_LAUNCHES', 
   badge,
   name,
@@ -6,5 +6,8 @@ export const storeLaunches = (badge, name, launchType, date, details, id, articl
   date,
   details,
   id,
-  article
+  article,
+  landSuccess,
+  reused,
+  reddit
 })
