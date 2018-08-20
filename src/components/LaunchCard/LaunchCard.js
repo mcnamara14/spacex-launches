@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './LaunchCard.css';
-import placeholderImg from './images/placeholder.png';
 import articleLinkImg from './images/link.svg';
 
 class LaunchCard extends Component {
