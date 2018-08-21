@@ -83,7 +83,7 @@ export const mapDispatchToProps = (dispatch) => ({
       badge, 
       name, 
       type, 
-      date, 
+      date,
       details,
       id, 
       article,
