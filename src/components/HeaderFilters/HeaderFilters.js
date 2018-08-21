@@ -5,18 +5,53 @@ import refreshIcon from './images/refresh.svg';
 import { storeLandSuccess } from '../../actions/storeLandSuccess';
 import { storeReused } from '../../actions/storeReused';
 import { storeReddit } from '../../actions/storeReddit';
+import { storeFilteredLaunches } from '../../actions/storeFilteredLaunches';
+import { clearFilteredLaunches } from '../../actions/clearFilteredLaunches';
 
 class HeaderFilters extends Component {
-  toggleLandSuccessFilter = (event) => {
-    this.props.landSuccess ? this.props.storeLandSuccess(false) : this.props.storeLandSuccess(true);
+  constructor() {
+    super()
+
+    this.state = {
+      filters: []
+    }
   }
 
-  toggleReusedFilter = (event) => {
-    this.props.reused ? this.props.storeReused(false) : this.props.storeReused(true);
+  toggleFilter = (filter) => {
+    if (!this.state.filters.includes(filter)) {
+      this.setState({
+        filters: [...this.state.filters, filter]
+      }, () => this.filterLaunches())
+    } else {
+      const index = this.state.filters.indexOf(filter);
+
+      this.setState(prevState => { 
+        let updatedFilters = prevState.filters
+        updatedFilters.splice(index, 1)
+        return {filters: updatedFilters};
+      }, () => this.filterLaunches())
+    }
   }
 
-  toggleRedditFilter = (event) => {
-    this.props.reddit ? this.props.storeReddit(false) : this.props.storeReddit(true);
+  filterLaunches = () => {
+    const { launches } = this.props;
+    const { filters } = this.state;
+
+    this.props.clearFilteredLaunches();
+
+    if (filters.length === 0) {
+      launches.forEach(launch => this.props.storeFilteredLaunches(launch.id))
+    } else {
+      launches.forEach(launch => {
+        let trueFilters = null;
+    
+        for (let i = 0; i < filters.length; i++) {
+          launch[filters[i]] === true ? trueFilters++ : null;
+        }
+        
+        trueFilters === filters.length ? this.props.storeFilteredLaunches(launch.id) : null;
+      })
+    }
   }
 
   render() {
@@ -26,15 +61,15 @@ class HeaderFilters extends Component {
             <div className="checkboxes">
               <label class="container landSuccess">LAND SUCCESS
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleLandSuccessFilter()} ></span>
+                <span class="checkmark" onClick={() => this.toggleFilter('landSuccess')} ></span>
               </label>
               <label class="container reused">REUSED
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleReusedFilter()}></span>
+                <span class="checkmark" onClick={() => this.toggleFilter('reused')}></span>
               </label>
               <label class="container withReddit">WITH REDDIT
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleRedditFilter()}></span>
+                <span class="checkmark" onClick={() => this.toggleFilter('reddit')}></span>
               </label>
             </div>
       </section>
@@ -45,10 +80,13 @@ class HeaderFilters extends Component {
 export const mapDispatchToProps = (dispatch) => ({
   storeLandSuccess: (boolean) => dispatch(storeLandSuccess(boolean)),
   storeReused: (boolean) => dispatch(storeReused(boolean)),
-  storeReddit: (boolean) => dispatch(storeReddit(boolean))
+  storeReddit: (boolean) => dispatch(storeReddit(boolean)),
+  storeFilteredLaunches: (id) => dispatch(storeFilteredLaunches(id)),
+  clearFilteredLaunches: () => dispatch(clearFilteredLaunches())
 });
 
 export const mapStateToProps = (state) => ({
+  launches: state.launches,
   filters: state.filters,
   landSuccess: state.landSuccess,
   reused: state.reused,

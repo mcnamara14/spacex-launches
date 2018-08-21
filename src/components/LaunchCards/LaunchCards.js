@@ -4,46 +4,24 @@ import './LaunchCards.css';
 import LaunchCard from '../LaunchCard/LaunchCard';
 
 class LaunchCards extends Component {
-  getFilters = () => {
-    const { landSuccess, reused, reddit } = this.props;
-
-    const filters = []
-
-    landSuccess ? filters.push('landSuccess') : null;
-    reused ? filters.push('reused') : null;
-    reddit ? filters.push('reddit') : null;
-
-    return filters;
+  shouldComponentUpdate(prevProps) {
+    return this.props.filteredLaunches.length !== prevProps.filteredLaunches.length
   }
 
-  filterLaunches = () => {
-    let filtered
-    const { launches } = this.props;
-    const filters = this.getFilters();
-    const filterLength = filters.length;
-
-    if (filterLength=== 0) {
-      filtered = launches.map(launch => {
-
-      return <LaunchCard {...launch} />
-      })
-      return filtered
+  getLaunches = () => {
+    let filtered;
+    const { launches, filteredLaunches } = this.props;
+    if (filteredLaunches.length === launches.length) {
+      return launches.map(launch => <LaunchCard {...launch} />)
     } else {
-      const filtered = launches.reduce((filteredLaunches, launch) => {
-        let trueFilters = null;
-    
-        for (let i = 0; i < filterLength; i++) {
-          launch[filters[i]] ? trueFilters++ : null;
-        }
-        
-        trueFilters === filters.length ? filteredLaunches.push(<LaunchCard {...launch} />) : null;
-  
-        return filteredLaunches;
-      }, [])
-    
-      return filtered;
-    }
-  
+       return filteredLaunches.reduce((filteredLaunches, filter) => {
+          launches.forEach(launch => {
+ 
+            launch.id === filter ? filteredLaunches.push(<LaunchCard {...launch} />) : null;
+          })
+          return filteredLaunches;
+        }, [])
+      }
   }
 
   render() {
@@ -51,7 +29,7 @@ class LaunchCards extends Component {
 
     const { launches } = this.props;
 
-    launches.length ? launchCards = this.filterLaunches() : null;
+    launches.length ? launchCards = this.getLaunches() : null;
 
     return (
       <section className="LaunchCards" >
@@ -63,6 +41,7 @@ class LaunchCards extends Component {
 
 const mapStateToProps = (state) => ({
   launches: state.launches,
+  filteredLaunches: state.launches,
   landSuccess: state.landSuccess,
   reddit: state.reddit, 
   reused: state.reused
