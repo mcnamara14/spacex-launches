@@ -8,13 +8,13 @@ class LaunchCard extends Component {
  
     return (
       <section className="LaunchCard" >
-          <div className="badge"><img src={badge} /></div>
+          <div className="badge"><img src={badge} alt="flight badge"/></div>
           <div className="name">{name}</div>
           <div className="type">{type}</div>
           <div className="date">{date}</div>
           <div className="details">{details}</div>
           <div className="id">{id}</div>
-          <div className="article"><a href={article} target="_blank"><img src={articleLinkImg} /></a></div>
+          <div className="article"><a href={article} target="_blank"><img src={articleLinkImg} alt="article link"/></a></div>
       </section>
     );
   }

@@ -34,7 +34,7 @@ class LaunchCards extends Component {
     } else {
        const filteredLaunches = filteredLaunchIds.reduce((filteredLaunches, filter) => {
           launches.forEach(launch => {
-            launch.id === filter ? filteredLaunches.push(launch) : null;
+            if (launch.id === filter) filteredLaunches.push(launch)
           })
 
         return filteredLaunches;
@@ -50,7 +50,7 @@ class LaunchCards extends Component {
     let launchCards;
     const { launches } = this.props;
     
-    launches.length ? launchCards = this.getLaunches() : null;
+    if (launches.length) launchCards = this.getLaunches();
    
     return (
       <section className="LaunchCards" >
