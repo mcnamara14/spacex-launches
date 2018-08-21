@@ -1,14 +1,10 @@
 import { combineReducers } from 'redux';
 import { launches } from './launches';
-import { filteredLaunches } from './filteredLaunches';
-import { landSuccess } from './landSuccess';
-import { reddit } from './reddit';
-import { reused } from './reused';
+import { filteredLaunchIds } from './filteredLaunchIds';
+import { dateSort } from './dateSort';
 
 export const rootReducer = combineReducers({
   launches,
-  filteredLaunches,
-  landSuccess,
-  reddit,
-  reused
+  filteredLaunchIds,
+  dateSort
 });

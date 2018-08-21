@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HeaderFilters.css';
 import refreshIcon from './images/refresh.svg';
-import { storeLandSuccess } from '../../actions/storeLandSuccess';
-import { storeReused } from '../../actions/storeReused';
-import { storeReddit } from '../../actions/storeReddit';
-import { storeFilteredLaunches } from '../../actions/storeFilteredLaunches';
-import { clearFilteredLaunches } from '../../actions/clearFilteredLaunches';
+import { storeFilteredLaunchIds } from '../../actions/storeFilteredLaunchIds';
+import { clearFilteredLaunchIds } from '../../actions/clearFilteredLaunchIds';
 
 class HeaderFilters extends Component {
   constructor() {
@@ -37,10 +34,10 @@ class HeaderFilters extends Component {
     const { launches } = this.props;
     const { filters } = this.state;
 
-    this.props.clearFilteredLaunches();
+    this.props.clearFilteredLaunchIds();
 
     if (filters.length === 0) {
-      launches.forEach(launch => this.props.storeFilteredLaunches(launch.id))
+      launches.forEach(launch => this.props.storeFilteredLaunchIds(launch.id))
     } else {
       launches.forEach(launch => {
         let trueFilters = null;
@@ -49,7 +46,7 @@ class HeaderFilters extends Component {
           launch[filters[i]] === true ? trueFilters++ : null;
         }
         
-        trueFilters === filters.length ? this.props.storeFilteredLaunches(launch.id) : null;
+        trueFilters === filters.length ? this.props.storeFilteredLaunchIds(launch.id) : null;
       })
     }
   }
@@ -78,11 +75,8 @@ class HeaderFilters extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  storeLandSuccess: (boolean) => dispatch(storeLandSuccess(boolean)),
-  storeReused: (boolean) => dispatch(storeReused(boolean)),
-  storeReddit: (boolean) => dispatch(storeReddit(boolean)),
-  storeFilteredLaunches: (id) => dispatch(storeFilteredLaunches(id)),
-  clearFilteredLaunches: () => dispatch(clearFilteredLaunches())
+  storeFilteredLaunchIds: (id) => dispatch(storeFilteredLaunchIds(id)),
+  clearFilteredLaunchIds: () => dispatch(clearFilteredLaunchIds())
 });
 
 export const mapStateToProps = (state) => ({

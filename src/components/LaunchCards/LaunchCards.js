@@ -4,21 +4,17 @@ import './LaunchCards.css';
 import LaunchCard from '../LaunchCard/LaunchCard';
 
 class LaunchCards extends Component {
-  shouldComponentUpdate(prevProps) {
-    return this.props.filteredLaunches.length !== prevProps.filteredLaunches.length
-  }
-
   getLaunches = () => {
-    let filtered;
-    const { launches, filteredLaunches } = this.props;
-    if (filteredLaunches.length === launches.length) {
-      return launches.map(launch => <LaunchCard {...launch} />)
+    const { launches, filteredLaunchIds } = this.props;
+  
+    if (filteredLaunchIds.length === 0 || filteredLaunchIds.length === launches.length) {
+      return launches.map((launch, index) => <LaunchCard {...launch} key={index} />)
     } else {
-       return filteredLaunches.reduce((filteredLaunches, filter) => {
+       return filteredLaunchIds.reduce((filteredLaunches, filter) => {
           launches.forEach(launch => {
- 
             launch.id === filter ? filteredLaunches.push(<LaunchCard {...launch} />) : null;
           })
+
           return filteredLaunches;
         }, [])
       }
@@ -26,11 +22,10 @@ class LaunchCards extends Component {
 
   render() {
     let launchCards;
-
     const { launches } = this.props;
-
+    
     launches.length ? launchCards = this.getLaunches() : null;
-
+   
     return (
       <section className="LaunchCards" >
         {launchCards}
@@ -41,7 +36,7 @@ class LaunchCards extends Component {
 
 const mapStateToProps = (state) => ({
   launches: state.launches,
-  filteredLaunches: state.launches,
+  filteredLaunchIds: state.filteredLaunchIds,
   landSuccess: state.landSuccess,
   reddit: state.reddit, 
   reused: state.reused
