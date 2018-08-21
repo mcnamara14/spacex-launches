@@ -54,7 +54,7 @@ class HeaderFilters extends Component {
   render() {
     return (
       <section className="HeaderFilters" >
-            <div className="refreshIcon"><img src={refreshIcon} /></div>
+            <div className="refreshIcon" onClick={() => this.props.fetchLaunches()}><img src={refreshIcon} /></div>
             <div className="checkboxes">
               <label class="container landSuccess">LAND SUCCESS
                 <input type="checkbox" />

@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <section className="Header" >
           <h1>SpaceX Launches</h1>
-          <HeaderFilters />
+          <HeaderFilters fetchLaunches={this.props.fetchLaunches} />
           <HeaderLabels />
       </section>
     );
