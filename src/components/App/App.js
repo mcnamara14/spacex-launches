@@ -10,7 +10,7 @@ import { clearLaunches } from '../../actions/clearLaunches';
 const moment = require('moment');
 moment().format();
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     this.fetchLaunches();
   }
@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <section className="App" style={bgImg}>
         <main>
-          <img src={rocket} className="rocketBg" />
+          <img src={rocket} className="rocketBg" alt="rocket bg"/>
           <Header fetchLaunches={this.fetchLaunches}/>
           <LaunchCards />
         </main>

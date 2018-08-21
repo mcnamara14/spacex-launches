@@ -43,10 +43,10 @@ class HeaderFilters extends Component {
         let trueFilters = null;
     
         for (let i = 0; i < filters.length; i++) {
-          launch[filters[i]] === true ? trueFilters++ : null;
+          if (launch[filters[i]] === true) trueFilters++
         }
         
-        trueFilters === filters.length ? this.props.storeFilteredLaunchIds(launch.id) : null;
+        if (trueFilters === filters.length) this.props.storeFilteredLaunchIds(launch.id);
       })
     }
   }
@@ -54,19 +54,19 @@ class HeaderFilters extends Component {
   render() {
     return (
       <section className="HeaderFilters" >
-            <div className="refreshIcon" onClick={() => this.props.fetchLaunches()}><img src={refreshIcon} /></div>
+            <div className="refreshIcon" onClick={() => this.props.fetchLaunches()}><img src={refreshIcon} alt="refresh icon"/></div>
             <div className="checkboxes">
-              <label class="container landSuccess">LAND SUCCESS
+              <label className="container landSuccess">LAND SUCCESS
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleFilter('landSuccess')} ></span>
+                <span className="checkmark" onClick={() => this.toggleFilter('landSuccess')} ></span>
               </label>
-              <label class="container reused">REUSED
+              <label className="container reused">REUSED
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleFilter('reused')}></span>
+                <span className="checkmark" onClick={() => this.toggleFilter('reused')}></span>
               </label>
-              <label class="container withReddit">WITH REDDIT
+              <label className="container withReddit">WITH REDDIT
                 <input type="checkbox" />
-                <span class="checkmark" onClick={() => this.toggleFilter('reddit')}></span>
+                <span className="checkmark" onClick={() => this.toggleFilter('reddit')}></span>
               </label>
             </div>
       </section>
