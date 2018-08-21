@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import LaunchCards from '../LaunchCards/LaunchCards';
 import spaceBgImg from './images/background.jpg';
 import { storeLaunches } from '../../actions/storeLaunches';
+import { clearLaunches } from '../../actions/clearLaunches';
 const moment = require('moment');
 moment().format();
 
@@ -45,6 +46,7 @@ class App extends Component {
   }
 
   storeLaunches = (launchData) => {
+    this.props.clearLaunches();
     launchData.forEach(launch => {
       const { badge, name, type, date, details, id, article, landSuccess, reused, reddit } = launch;
 
@@ -58,7 +60,7 @@ class App extends Component {
     return (
       <section className="App" style={bgImg}>
         <main>
-          <Header />
+          <Header fetchLaunches={this.fetchLaunches}/>
           <LaunchCards />
         </main>
       </section>
@@ -92,6 +94,7 @@ export const mapDispatchToProps = (dispatch) => ({
       reddit
     )
     ),
+    clearLaunches: () => dispatch(clearLaunches())
 });
 
 export default connect(null, mapDispatchToProps)(App);

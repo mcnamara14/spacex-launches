@@ -24,6 +24,10 @@ h2 {
   margin-bottom: 18px;
 }
 
+h2.date:hover, .refreshIcon {
+  cursor: pointer;
+}
+
 h2.date.desc {
   margin-bottom: 18px;
   border-top: 4px solid #27d9cf;
