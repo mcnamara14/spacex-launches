@@ -2,52 +2,56 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './LaunchCards.css';
 import LaunchCard from '../LaunchCard/LaunchCard';
+const moment = require('moment');
+moment().format();
 
 class LaunchCards extends Component {
-  getFilters = () => {
-    const { landSuccess, reused, reddit } = this.props;
+  sortLaunches = (launches) => {
+    const { dateSort } = this.props;
+    let sorted;
 
-    const filters = []
-
-    landSuccess ? filters.push('landSuccess') : null;
-    reused ? filters.push('reused') : null;
-    reddit ? filters.push('reddit') : null;
-
-    return filters;
-  }
-
-  filterLaunches = () => {
-    let launchCards;
-    const { launches } = this.props;
-    const filters = this.getFilters();
-
-    if (!filters.length) {
-      launchCards = launches.map(launch => {
-
-      return <LaunchCard {...launch} />
-      })
+    if (dateSort === true) {
+      sorted = launches.sort(function(a, b) {
+        return moment(b.date).format('X')-moment(a.date).format('X')
+      });
     } else {
-        launchCards = launches.reduce((launchesArray, launch) => {
-          const filterLaunch = filters.every(item => {
-            return launch[item] === true;
-          })
-
-        filterLaunch ? launchesArray.push(<LaunchCard {...launch} />) : null;
-  
-        return launchesArray;
-        }, []);
+      sorted = launches.sort(function(a, b) {
+        return moment(a.date).format('X')-moment(b.date).format('X')
+      });
     }
 
-    return launchCards
+    return sorted;
+
+  }
+  
+  getLaunches = () => {
+    const { launches, filteredLaunchIds } = this.props;
+
+    if (filteredLaunchIds.length === 0 || filteredLaunchIds.length === launches.length) {
+      const sortedLaunches = this.sortLaunches(launches);
+
+      return sortedLaunches.map((launch, index) => <LaunchCard {...launch} key={index} />)
+    } else {
+       const filteredLaunches = filteredLaunchIds.reduce((filteredLaunches, filter) => {
+          launches.forEach(launch => {
+            launch.id === filter ? filteredLaunches.push(launch) : null;
+          })
+
+        return filteredLaunches;
+        }, [])
+
+        const sortedLaunches = this.sortLaunches(filteredLaunches);
+
+        return sortedLaunches.map((launch, index) => <LaunchCard {...launch} key={index} />)
+      }
   }
 
   render() {
     let launchCards;
-
-    const { reddit, reused, landSuccess, launches } = this.props;
-
-    launches.length ? launchCards = this.filterLaunches() : null;
-
+    const { launches } = this.props;
+    
+    launches.length ? launchCards = this.getLaunches() : null;
+   
     return (
       <section className="LaunchCards" >
         {launchCards}
@@ -58,9 +62,8 @@ class LaunchCards extends Component {
 
 const mapStateToProps = (state) => ({
   launches: state.launches,
-  landSuccess: state.landSuccess,
-  reddit: state.reddit, 
-  reused: state.reused
+  filteredLaunchIds: state.filteredLaunchIds,
+  dateSort: state.dateSort
 })
 
 export default connect(mapStateToProps)(LaunchCards);
