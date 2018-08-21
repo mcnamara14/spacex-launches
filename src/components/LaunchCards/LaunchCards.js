@@ -6,39 +6,43 @@ const moment = require('moment');
 moment().format();
 
 class LaunchCards extends Component {
-  sortLaunches = () => {
-    const { launches, dateSort } = this.props;
+  sortLaunches = (launches) => {
+    const { dateSort } = this.props;
     let sorted;
 
     if (dateSort === true) {
-      console.log('1')
       sorted = launches.sort(function(a, b) {
         return moment(b.date).format('X')-moment(a.date).format('X')
       });
     } else {
-      console.log('2')
       sorted = launches.sort(function(a, b) {
         return moment(a.date).format('X')-moment(b.date).format('X')
       });
     }
 
-    return sorted
+    return sorted;
+
   }
   
   getLaunches = () => {
-    const { filteredLaunchIds } = this.props;
-    const sortedLaunches = this.sortLaunches();
+    const { launches, filteredLaunchIds } = this.props;
 
-    if (filteredLaunchIds.length === 0 || filteredLaunchIds.length === sortedLaunches.length) {
+    if (filteredLaunchIds.length === 0 || filteredLaunchIds.length === launches.length) {
+      const sortedLaunches = this.sortLaunches(launches);
+
       return sortedLaunches.map((launch, index) => <LaunchCard {...launch} key={index} />)
     } else {
-       return filteredLaunchIds.reduce((filteredLaunches, filter) => {
-          sortedLaunches.forEach(launch => {
-            launch.id === filter ? filteredLaunches.push(<LaunchCard {...launch} />) : null;
+       const filteredLaunches = filteredLaunchIds.reduce((filteredLaunches, filter) => {
+          launches.forEach(launch => {
+            launch.id === filter ? filteredLaunches.push(launch) : null;
           })
 
-          return filteredLaunches;
+        return filteredLaunches;
         }, [])
+
+        const sortedLaunches = this.sortLaunches(filteredLaunches);
+
+        return sortedLaunches.map((launch, index) => <LaunchCard {...launch} key={index} />)
       }
   }
 
