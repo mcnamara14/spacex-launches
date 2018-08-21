@@ -17,34 +17,39 @@ class LaunchCards extends Component {
   }
 
   filterLaunches = () => {
-    let launchCards;
+    let filtered
     const { launches } = this.props;
     const filters = this.getFilters();
+    const filterLength = filters.length;
 
-    if (!filters.length) {
-      launchCards = launches.map(launch => {
+    if (filterLength=== 0) {
+      filtered = launches.map(launch => {
 
       return <LaunchCard {...launch} />
       })
+      return filtered
     } else {
-        launchCards = launches.reduce((launchesArray, launch) => {
-          const filterLaunch = filters.every(item => {
-            return launch[item] === true;
-          })
-
-        filterLaunch ? launchesArray.push(<LaunchCard {...launch} />) : null;
+      const filtered = launches.reduce((filteredLaunches, launch) => {
+        let trueFilters = null;
+    
+        for (let i = 0; i < filterLength; i++) {
+          launch[filters[i]] ? trueFilters++ : null;
+        }
+        
+        trueFilters === filters.length ? filteredLaunches.push(<LaunchCard {...launch} />) : null;
   
-        return launchesArray;
-        }, []);
+        return filteredLaunches;
+      }, [])
+    
+      return filtered;
     }
-
-    return launchCards
+  
   }
 
   render() {
     let launchCards;
 
-    const { reddit, reused, landSuccess, launches } = this.props;
+    const { launches } = this.props;
 
     launches.length ? launchCards = this.filterLaunches() : null;
 
