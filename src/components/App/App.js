@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import LaunchCards from '../LaunchCards/LaunchCards';
 import spaceBgImg from './images/background.jpg';
+import rocket from './images/rocket.png';
 import { storeLaunches } from '../../actions/storeLaunches';
 import { clearLaunches } from '../../actions/clearLaunches';
 const moment = require('moment');
@@ -60,6 +61,7 @@ class App extends Component {
     return (
       <section className="App" style={bgImg}>
         <main>
+          <img src={rocket} className="rocketBg" />
           <Header fetchLaunches={this.fetchLaunches}/>
           <LaunchCards />
         </main>
