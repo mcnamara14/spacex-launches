@@ -18,6 +18,7 @@ ShallowWrapper {
     "props": Object {
       "children": <main>
         <img
+                alt="rocket bg"
                 className="rocketBg"
                 src="rocket.png"
         />
@@ -39,6 +40,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
+            alt="rocket bg"
             className="rocketBg"
             src="rocket.png"
 />,
@@ -55,6 +57,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "rocket bg",
             "className": "rocketBg",
             "src": "rocket.png",
           },
@@ -95,6 +98,7 @@ ShallowWrapper {
       "props": Object {
         "children": <main>
           <img
+                    alt="rocket bg"
                     className="rocketBg"
                     src="rocket.png"
           />
@@ -116,6 +120,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <img
+              alt="rocket bg"
               className="rocketBg"
               src="rocket.png"
 />,
@@ -132,6 +137,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "alt": "rocket bg",
               "className": "rocketBg",
               "src": "rocket.png",
             },
@@ -178,6 +184,7 @@ ShallowWrapper {
       },
     },
     "attachTo": undefined,
+    "disableLifecycleMethods": true,
     "hydrateIn": undefined,
   },
 }

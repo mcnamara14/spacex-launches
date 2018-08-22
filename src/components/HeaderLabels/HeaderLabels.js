@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './HeaderLabels.css';
 import { toggleDateSort } from '../../actions/toggleDateSort';
 
-class HeaderLabels extends Component {
+export class HeaderLabels extends Component {
   constructor() {
     super()
 

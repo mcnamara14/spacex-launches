@@ -5,7 +5,7 @@ import LaunchCard from '../LaunchCard/LaunchCard';
 const moment = require('moment');
 moment().format();
 
-class LaunchCards extends Component {
+export class LaunchCards extends Component {
   sortLaunches = (launches) => {
     const { dateSort } = this.props;
     let sorted;
@@ -21,7 +21,6 @@ class LaunchCards extends Component {
     }
 
     return sorted;
-
   }
   
   getLaunches = () => {

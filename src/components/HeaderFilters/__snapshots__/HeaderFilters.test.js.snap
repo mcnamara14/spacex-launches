@@ -1,0 +1,619 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderFilters should match the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HeaderFilters
+    clearFilteredLaunchIds={[Function]}
+    launches={
+        Array [
+            Object {
+              "article": "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
+              "badge": "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
+              "date": "03/24/2006",
+              "details": "Engine failure at 33 seconds and loss of vehicle",
+              "id": 1,
+              "landSuccess": false,
+              "name": "Falcon 1",
+              "reddit": false,
+              "reused": false,
+              "type": "Merlin A",
+            },
+            Object {
+              "article": "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
+              "badge": "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
+              "date": "03/24/2008",
+              "details": "Engine failure at 33 seconds and loss of vehicle",
+              "id": 2,
+              "landSuccess": false,
+              "name": "Falcon 2",
+              "reddit": false,
+              "reused": true,
+              "type": "Merlin B",
+            },
+          ]
+    }
+    storeFilteredLaunchIds={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="refreshIcon"
+          onClick={[Function]}
+>
+          <img
+                    alt="refresh icon"
+                    src="refresh.svg"
+          />
+</div>,
+        <div
+          className="checkboxes"
+>
+          <label
+                    className="container landSuccess"
+          >
+                    LAND SUCCESS
+                    <input
+                              type="checkbox"
+                    />
+                    <span
+                              className="checkmark"
+                              onClick={[Function]}
+                    />
+          </label>
+          <label
+                    className="container reused"
+          >
+                    REUSED
+                    <input
+                              type="checkbox"
+                    />
+                    <span
+                              className="checkmark"
+                              onClick={[Function]}
+                    />
+          </label>
+          <label
+                    className="container withReddit"
+          >
+                    WITH REDDIT
+                    <input
+                              type="checkbox"
+                    />
+                    <span
+                              className="checkmark"
+                              onClick={[Function]}
+                    />
+          </label>
+</div>,
+      ],
+      "className": "HeaderFilters",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="refresh icon"
+            src="refresh.svg"
+/>,
+          "className": "refreshIcon",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "refresh icon",
+            "src": "refresh.svg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="container landSuccess"
+>
+              LAND SUCCESS
+              <input
+                            type="checkbox"
+              />
+              <span
+                            className="checkmark"
+                            onClick={[Function]}
+              />
+</label>,
+            <label
+              className="container reused"
+>
+              REUSED
+              <input
+                            type="checkbox"
+              />
+              <span
+                            className="checkmark"
+                            onClick={[Function]}
+              />
+</label>,
+            <label
+              className="container withReddit"
+>
+              WITH REDDIT
+              <input
+                            type="checkbox"
+              />
+              <span
+                            className="checkmark"
+                            onClick={[Function]}
+              />
+</label>,
+          ],
+          "className": "checkboxes",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "LAND SUCCESS",
+                <input
+                  type="checkbox"
+/>,
+                <span
+                  className="checkmark"
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "container landSuccess",
+            },
+            "ref": null,
+            "rendered": Array [
+              "LAND SUCCESS",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "type": "checkbox",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "checkmark",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "REUSED",
+                <input
+                  type="checkbox"
+/>,
+                <span
+                  className="checkmark"
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "container reused",
+            },
+            "ref": null,
+            "rendered": Array [
+              "REUSED",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "type": "checkbox",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "checkmark",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+            ],
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "WITH REDDIT",
+                <input
+                  type="checkbox"
+/>,
+                <span
+                  className="checkmark"
+                  onClick={[Function]}
+/>,
+              ],
+              "className": "container withReddit",
+            },
+            "ref": null,
+            "rendered": Array [
+              "WITH REDDIT",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "type": "checkbox",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "checkmark",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+            ],
+            "type": "label",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="refreshIcon"
+            onClick={[Function]}
+>
+            <img
+                        alt="refresh icon"
+                        src="refresh.svg"
+            />
+</div>,
+          <div
+            className="checkboxes"
+>
+            <label
+                        className="container landSuccess"
+            >
+                        LAND SUCCESS
+                        <input
+                                    type="checkbox"
+                        />
+                        <span
+                                    className="checkmark"
+                                    onClick={[Function]}
+                        />
+            </label>
+            <label
+                        className="container reused"
+            >
+                        REUSED
+                        <input
+                                    type="checkbox"
+                        />
+                        <span
+                                    className="checkmark"
+                                    onClick={[Function]}
+                        />
+            </label>
+            <label
+                        className="container withReddit"
+            >
+                        WITH REDDIT
+                        <input
+                                    type="checkbox"
+                        />
+                        <span
+                                    className="checkmark"
+                                    onClick={[Function]}
+                        />
+            </label>
+</div>,
+        ],
+        "className": "HeaderFilters",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="refresh icon"
+              src="refresh.svg"
+/>,
+            "className": "refreshIcon",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "refresh icon",
+              "src": "refresh.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="container landSuccess"
+>
+                LAND SUCCESS
+                <input
+                                type="checkbox"
+                />
+                <span
+                                className="checkmark"
+                                onClick={[Function]}
+                />
+</label>,
+              <label
+                className="container reused"
+>
+                REUSED
+                <input
+                                type="checkbox"
+                />
+                <span
+                                className="checkmark"
+                                onClick={[Function]}
+                />
+</label>,
+              <label
+                className="container withReddit"
+>
+                WITH REDDIT
+                <input
+                                type="checkbox"
+                />
+                <span
+                                className="checkmark"
+                                onClick={[Function]}
+                />
+</label>,
+            ],
+            "className": "checkboxes",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "LAND SUCCESS",
+                  <input
+                    type="checkbox"
+/>,
+                  <span
+                    className="checkmark"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "container landSuccess",
+              },
+              "ref": null,
+              "rendered": Array [
+                "LAND SUCCESS",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "type": "checkbox",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "checkmark",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "span",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "REUSED",
+                  <input
+                    type="checkbox"
+/>,
+                  <span
+                    className="checkmark"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "container reused",
+              },
+              "ref": null,
+              "rendered": Array [
+                "REUSED",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "type": "checkbox",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "checkmark",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "span",
+                },
+              ],
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "WITH REDDIT",
+                  <input
+                    type="checkbox"
+/>,
+                  <span
+                    className="checkmark"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "container withReddit",
+              },
+              "ref": null,
+              "rendered": Array [
+                "WITH REDDIT",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "type": "checkbox",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "checkmark",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "span",
+                },
+              ],
+              "type": "label",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
