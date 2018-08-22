@@ -53,7 +53,7 @@ export const mockLaunchData = [{
     },
   },
   "reuse": {
-    "core": false,
+    "core": true,
     "side_core1": false,
     "side_core2": false,
     "fairings": false,
@@ -88,6 +88,6 @@ export const cleanMockLaunchData = [{
     "landSuccess": false, 
     "name": "Falcon 2", 
     "reddit": false, 
-    "reused": false, 
+    "reused": true, 
     "type": "Merlin B"
 }]

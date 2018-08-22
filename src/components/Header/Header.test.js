@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Header', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Header />, { disableLifecycleMethods: true });
+    const wrapper = shallow(<Header />);
     expect(wrapper).toMatchSnapshot();
   });
 });

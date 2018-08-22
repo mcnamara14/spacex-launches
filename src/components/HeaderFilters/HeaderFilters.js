@@ -5,7 +5,7 @@ import refreshIcon from './images/refresh.svg';
 import { storeFilteredLaunchIds } from '../../actions/storeFilteredLaunchIds';
 import { clearFilteredLaunchIds } from '../../actions/clearFilteredLaunchIds';
 
-class HeaderFilters extends Component {
+export class HeaderFilters extends Component {
   constructor() {
     super()
 

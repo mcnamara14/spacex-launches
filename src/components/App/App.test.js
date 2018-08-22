@@ -71,7 +71,7 @@ describe('App', () => {
           "Engine failure at 33 seconds and loss of vehicle", 
           2, "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html", 
           false, 
-          false, 
+          true, 
           false], 
           [
             "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png", 
