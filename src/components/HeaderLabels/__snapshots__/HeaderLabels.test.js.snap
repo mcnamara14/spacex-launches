@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLabels should match the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HeaderLabels
+    toggleDateSort={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="badge"
+>
+          Badge
+</h2>,
+        <h2
+          className="name"
+>
+          Rocket Name
+</h2>,
+        <h2
+          className="type"
+>
+          Rocket Type
+</h2>,
+        <h2
+          className="date desc"
+          onClick={[Function]}
+>
+          Launch Date
+</h2>,
+        <h2
+          className="details"
+>
+          Details
+</h2>,
+        <h2
+          className="id"
+>
+          ID
+</h2>,
+        <h2
+          className="article"
+>
+          Article
+</h2>,
+      ],
+      "className": "HeaderLabels",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Badge",
+          "className": "badge",
+        },
+        "ref": null,
+        "rendered": "Badge",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Rocket Name",
+          "className": "name",
+        },
+        "ref": null,
+        "rendered": "Rocket Name",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Rocket Type",
+          "className": "type",
+        },
+        "ref": null,
+        "rendered": "Rocket Type",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Launch Date",
+          "className": "date desc",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Launch Date",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Details",
+          "className": "details",
+        },
+        "ref": null,
+        "rendered": "Details",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "ID",
+          "className": "id",
+        },
+        "ref": null,
+        "rendered": "ID",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Article",
+          "className": "article",
+        },
+        "ref": null,
+        "rendered": "Article",
+        "type": "h2",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="badge"
+>
+            Badge
+</h2>,
+          <h2
+            className="name"
+>
+            Rocket Name
+</h2>,
+          <h2
+            className="type"
+>
+            Rocket Type
+</h2>,
+          <h2
+            className="date desc"
+            onClick={[Function]}
+>
+            Launch Date
+</h2>,
+          <h2
+            className="details"
+>
+            Details
+</h2>,
+          <h2
+            className="id"
+>
+            ID
+</h2>,
+          <h2
+            className="article"
+>
+            Article
+</h2>,
+        ],
+        "className": "HeaderLabels",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Badge",
+            "className": "badge",
+          },
+          "ref": null,
+          "rendered": "Badge",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Rocket Name",
+            "className": "name",
+          },
+          "ref": null,
+          "rendered": "Rocket Name",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Rocket Type",
+            "className": "type",
+          },
+          "ref": null,
+          "rendered": "Rocket Type",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Launch Date",
+            "className": "date desc",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Launch Date",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Details",
+            "className": "details",
+          },
+          "ref": null,
+          "rendered": "Details",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "ID",
+            "className": "id",
+          },
+          "ref": null,
+          "rendered": "ID",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Article",
+            "className": "article",
+          },
+          "ref": null,
+          "rendered": "Article",
+          "type": "h2",
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getSnapshotBeforeUpdate": true,
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
